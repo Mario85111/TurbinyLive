@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply font-sans text-slate-100 antialiased;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(34, 211, 238, 0.18), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(99, 102, 241, 0.18), transparent 55%),
+      linear-gradient(160deg, #050b1f 0%, #07203a 45%, #04243a 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Bazowy efekt glasmorfizmu — używany przez <GlassCard /> */
+  .glass {
+    @apply rounded-2xl border border-white/15 bg-white/10 shadow-glass backdrop-blur-xl;
+  }
+
+  .glass-input {
+    @apply w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm text-slate-100
+      placeholder-slate-400 outline-none transition
+      focus:border-brand-400/60 focus:bg-white/10 focus:ring-2 focus:ring-brand-400/30;
+  }
+
+  .glass-label {
+    @apply mb-1 block text-xs font-medium uppercase tracking-wide text-slate-300;
+  }
+
+  .glass-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15
+      bg-white/10 px-4 py-2 text-sm font-medium text-slate-100 transition-colors
+      hover:bg-white/20 active:opacity-75 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .glass-btn-primary {
+    @apply border-brand-400/40 bg-brand-500/30 hover:bg-brand-500/45;
+  }
+}
+
+/* Subtelny pasek przewijania pasujący do ciemnego motywu */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

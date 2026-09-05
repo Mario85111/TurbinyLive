@@ -1,0 +1,6 @@
+name = "turbiny-live-owm"
+main = "index.js"
+compatibility_date = "2025-08-01"
+
+# Klucz NIE jest tutaj. Ustawiasz go jako sekret:
+#   npx wrangler secret put OPENWEATHER_API_KEY
