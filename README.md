@@ -256,6 +256,8 @@ src/
     ├── turbine/            # TurbineForm, PowerCurveEditor
     └── production/         # ProductionEstimate, PowerCurveChart, ForecastChart
 worker/                     # Cloudflare Worker: proxy do OpenWeatherMap
+CLAUDE.md                   # konwencje projektu dla Claude Code
+LICENSE                     # warunki korzystania + zastrzeżenia do obliczeń
 ```
 
 ## Uwagi metodyczne
@@ -273,3 +275,17 @@ worker/                     # Cloudflare Worker: proxy do OpenWeatherMap
 - **Roczny uzysk to ekstrapolacja z 5 dni** — nie uwzględnia sezonowości wiatru, strat farmy,
   dostępności turbiny ani efektu zacienienia (wake). Traktuj go jako rząd wielkości, nie prognozę
   budżetową. Rzetelny AEP wymaga rozkładu Weibulla z wieloletnich danych wiatrowych dla lokalizacji.
+
+## Licencja
+
+Copyright (c) 2026 Mariusz Latosz. Wszelkie prawa zastrzeżone.
+
+Kod można przeglądać w celach informacyjnych i oceny kwalifikacji autora.
+Kopiowanie, tworzenie opracowań i wykorzystanie komercyjne wymagają pisemnej zgody —
+pełne warunki w pliku [LICENSE](LICENSE).
+
+**Wyniki obliczeń mają charakter poglądowy** i nie stanowią podstawy do decyzji
+inwestycyjnych ani prognozy uzysku w rozumieniu umów przyłączeniowych. Szczegóły
+w sekcji „Uwagi metodyczne" powyżej oraz w [LICENSE](LICENSE).
+
+W sprawie licencji komercyjnej lub wdrożenia: mariusz.kalmuk@gmail.com

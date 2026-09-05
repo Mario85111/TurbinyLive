@@ -1,0 +1,74 @@
+Copyright (c) 2026 Mariusz Latosz. Wszelkie prawa zastrzeżone.
+All rights reserved.
+
+================================================================================
+WARUNKI KORZYSTANIA
+================================================================================
+
+Niniejsze oprogramowanie („Turbiny Live") wraz z kodem źródłowym, dokumentacją
+i materiałami towarzyszącymi stanowi własność autora i jest chronione prawem
+autorskim.
+
+DOZWOLONE
+
+  Przeglądanie i zapoznawanie się z kodem źródłowym w celach informacyjnych,
+  edukacyjnych oraz oceny kwalifikacji autora (portfolio).
+
+ZABRONIONE BEZ UPRZEDNIEJ PISEMNEJ ZGODY AUTORA
+
+  - kopiowanie, powielanie i rozpowszechnianie kodu w całości lub w części,
+  - tworzenie opracowań i utworów zależnych,
+  - wykorzystanie komercyjne, w tym wdrażanie u siebie lub u klientów,
+  - włączanie fragmentów kodu do innych projektów.
+
+W sprawie licencji komercyjnej lub wdrożenia napisz na:
+mariusz.kalmuk@gmail.com
+
+================================================================================
+ZASTRZEŻENIE DOTYCZĄCE OBLICZEŃ
+================================================================================
+
+Oprogramowanie szacuje produkcję energii na podstawie prognozy pogody oraz
+orientacyjnych krzywych mocy turbin. Wyniki mają charakter POGLĄDOWY i nie
+stanowią:
+
+  - opinii technicznej ani ekspertyzy w rozumieniu przepisów budowlanych,
+  - podstawy do decyzji inwestycyjnych, finansowych lub kredytowych,
+  - prognozy uzysku energetycznego w rozumieniu umów przyłączeniowych
+    lub kontraktów sprzedaży energii.
+
+W szczególności:
+
+  - krzywe mocy presetów są wartościami przybliżonymi — wiążące są wyłącznie
+    karty katalogowe producenta turbiny,
+  - roczny uzysk jest ekstrapolacją z pięciodniowej prognozy i nie uwzględnia
+    sezonowości wiatru, strat farmy, dostępności turbiny ani efektu zacienienia,
+  - rzetelne oszacowanie AEP wymaga wieloletnich danych wiatrowych dla danej
+    lokalizacji i opracowania przez uprawnionego specjalistę.
+
+================================================================================
+WYŁĄCZENIE ODPOWIEDZIALNOŚCI
+================================================================================
+
+OPROGRAMOWANIE UDOSTĘPNIANE JEST W STANIE „TAKIM, JAKIE JEST", BEZ JAKICHKOLWIEK
+GWARANCJI, WYRAŹNYCH LUB DOROZUMIANYCH, W TYM GWARANCJI PRZYDATNOŚCI HANDLOWEJ,
+PRZYDATNOŚCI DO OKREŚLONEGO CELU ORAZ NIENARUSZANIA PRAW OSÓB TRZECICH.
+
+AUTOR NIE PONOSI ODPOWIEDZIALNOŚCI ZA JAKIEKOLWIEK SZKODY — BEZPOŚREDNIE,
+POŚREDNIE, UBOCZNE, SZCZEGÓLNE ANI NASTĘPCZE — WYNIKAJĄCE Z KORZYSTANIA
+Z OPROGRAMOWANIA LUB Z POLEGANIA NA WYNIKACH JEGO OBLICZEŃ.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+================================================================================
+SKŁADNIKI FIRM TRZECICH
+================================================================================
+
+Projekt korzysta z bibliotek open source (React, Vite, Tailwind CSS, Recharts,
+lucide-react i inne), z których każda podlega własnej licencji. Powyższe warunki
+dotyczą wyłącznie kodu autorskiego niniejszego projektu.
+
+Dane pogodowe pochodzą z OpenWeatherMap i podlegają warunkom tego dostawcy.
