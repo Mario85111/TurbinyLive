@@ -101,10 +101,10 @@ Worker dodatkowo:
 
 ### Wdrożenie Workera (jednorazowo)
 
-Wejdź do katalogu Workera:
+Wejdź do katalogu Workera (ścieżki są względne — startuj z katalogu projektu):
 
 ```
-cd "C:\Users\mariu\OneDrive\Pulpit\APKI\Turbiny Live\worker"
+cd worker
 ```
 
 Zaloguj się do Cloudflare (otworzy przeglądarkę):
@@ -143,7 +143,7 @@ Jeśli hosting stoi pod innym adresem niż `turbiny-live.web.app`, dopisz go do
 Wróć do katalogu projektu:
 
 ```
-cd "C:\Users\mariu\OneDrive\Pulpit\APKI\Turbiny Live"
+cd ..
 ```
 
 Zbuduj:
@@ -187,7 +187,7 @@ Najczęstsza przyczyna to **biały znak doklejony przy wklejaniu** klucza do
 odrzuca wtedy zapytanie, mimo że sam klucz jest dobry.
 
 Worker robi na kluczu `trim()`, więc obecnie jest na to odporny. Jeśli mimo to
-widzisz 401, wgraj sekret bez pośrednictwa schowka — w katalogu głównym projektu:
+widzisz 401, wgraj sekret bez pośrednictwa schowka — z katalogu głównego projektu:
 
 ```
 $k = (Get-Content .env | Select-String '^OPENWEATHER_API_KEY=').Line -replace '^OPENWEATHER_API_KEY=',''
