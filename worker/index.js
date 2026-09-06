@@ -61,7 +61,9 @@ export default {
       return json({ error: 'Origin niedozwolony.' }, 403, origin)
     }
 
-    const key = env.OPENWEATHER_API_KEY
+    // trim() jest istotny: wklejenie klucza do `wrangler secret put` łatwo dokleja
+    // spację lub znak końca linii, a wtedy OpenWeatherMap odrzuca zapytanie z 401.
+    const key = env.OPENWEATHER_API_KEY?.trim()
     if (!key) {
       return json(
         { code: 'NO_KEY', error: 'Worker nie ma skonfigurowanego klucza OpenWeatherMap.' },

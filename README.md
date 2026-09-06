@@ -125,8 +125,15 @@ Wdróż Workera:
 npx wrangler deploy
 ```
 
-Wrangler wypisze adres w postaci `https://turbiny-live-owm.<subdomena>.workers.dev`.
-Wpisz go do `.env` jako `VITE_API_BASE` z sufiksem `/api/owm`.
+Wrangler wypisze adres Workera. Wpisz go do `.env` jako `VITE_API_BASE`
+z sufiksem `/api/owm`. Aktualne wdrożenie działa pod:
+
+```
+VITE_API_BASE=https://turbiny-live-owm.otoro.workers.dev/api/owm
+```
+
+Subdomena `otoro` jest przypisana do konta Cloudflare i obowiązuje dla wszystkich
+Workerów — nie da się jej zmienić per projekt.
 
 Jeśli hosting stoi pod innym adresem niż `turbiny-live.web.app`, dopisz go do
 `ALLOWED_ORIGINS` w `worker/index.js` i wdróż Workera ponownie.
@@ -172,6 +179,32 @@ npx wrangler secret list
 
 Powinien być na liście `OPENWEATHER_API_KEY`. Jeśli go nie ma albo jest zły, wgraj go
 ponownie (`npx wrangler secret put OPENWEATHER_API_KEY`) i wdróż Workera.
+
+### Worker zwraca 401, choć klucz jest poprawny
+
+Najczęstsza przyczyna to **biały znak doklejony przy wklejaniu** klucza do
+`wrangler secret put` — spacja albo znak końca linii ze schowka. OpenWeatherMap
+odrzuca wtedy zapytanie, mimo że sam klucz jest dobry.
+
+Worker robi na kluczu `trim()`, więc obecnie jest na to odporny. Jeśli mimo to
+widzisz 401, wgraj sekret bez pośrednictwa schowka — w katalogu głównym projektu:
+
+```
+$k = (Get-Content .env | Select-String '^OPENWEATHER_API_KEY=').Line -replace '^OPENWEATHER_API_KEY=',''
+```
+
+```
+$k.Trim() | npx wrangler secret put OPENWEATHER_API_KEY --cwd worker
+```
+
+Potem sprawdź, czy proxy odpowiada (podstaw swój adres Workera):
+
+```
+curl "https://turbiny-live-owm.otoro.workers.dev/api/owm/data/2.5/weather?lat=54.35&lon=18.65&units=metric"
+```
+
+Osobno warto zweryfikować sam klucz bezpośrednio w OWM — jeśli i tam wraca 401,
+klucz jest zły albo jeszcze nieaktywny (nowy potrzebuje do ~2 h).
 
 ### „Serwer nie ma skonfigurowanego klucza” / plakietka „Brak klucza API” (503)
 
