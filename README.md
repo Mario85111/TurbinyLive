@@ -311,7 +311,7 @@ LICENSE                     # warunki korzystania + zastrzeżenia do obliczeń
 
 ## Licencja
 
-Copyright (c) 2026 Mariusz Latosz. Wszelkie prawa zastrzeżone.
+Copyright (c) 2026 Mariusz Kałmuk. Wszelkie prawa zastrzeżone.
 
 Kod można przeglądać w celach informacyjnych i oceny kwalifikacji autora.
 Kopiowanie, tworzenie opracowań i wykorzystanie komercyjne wymagają pisemnej zgody —
